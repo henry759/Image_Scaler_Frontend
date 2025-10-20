@@ -15,7 +15,7 @@ function App() {
     if (!userImage) return;
     const formData = new FormData();
     formData.append("file", userImage);
-    const res = await fetch("http://localhost:8000/process", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/process`, {
       method: "POST",
       body: formData,
     });
